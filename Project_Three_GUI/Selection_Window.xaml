@@ -1,0 +1,24 @@
+﻿<Window x:Class="Project_Three_GUI.Selection_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Three_GUI"
+        mc:Ignorable="d"
+        Title="Selection_Window"  WindowState="Maximized" WindowStyle="None" FontFamily="Tw Cen MT" FontSize="18" >
+    <DockPanel>
+        <Image Height="auto" Source="/Resources/sidebanner.png"  VerticalAlignment="Top" HorizontalAlignment="Left">
+        </Image>
+        <StackPanel DockPanel.Dock="Right">
+            <Button Width="auto" Height="auto" HorizontalAlignment="Right" Margin="10,10,10,100" Background="White" Foreground="Black" Content="X" FontSize="44"  Click="Exit_Button" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.504" />
+            <StackPanel Orientation="Horizontal"  Width="auto" Height="auto" HorizontalAlignment="Center">
+                <Button MaxWidth="500" MinWidth="300" Foreground="White" Padding="10"  FontSize="44" Background="#aa1d2c" Height="220" Margin="30" Click="newResident_btn_click">
+                    <TextBlock Text="New Resident" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Button>
+                <Button MaxWidth="500" MinWidth="300"  FontSize="44" Foreground="White" Padding="10" Background="#aa1d2c" Height="220" Margin="30" UseLayoutRounding="False" VerticalAlignment="Center"  Click="residentSearch_btn_click">
+                    <TextBlock Text="Resident Search" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="Project_Three_GUI.Resident_Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Three_GUI"
+        mc:Ignorable="d"
+        Title="Resident_Search"  WindowState="Maximized" WindowStyle="None" FontFamily="Tw Cen MT" FontSize="18" >
+    <DockPanel>
+        <Image Height="auto" Source="/Resources/sidebanner.png"  VerticalAlignment="Top" HorizontalAlignment="Left">
+        </Image>
+        <StackPanel DockPanel.Dock="Right">
+            <Grid>
+                <Button Width="auto" Height="auto" HorizontalAlignment="Left" Margin="10,10,0,0" Background="White" Foreground="Black" Content="Back" FontSize="22"  Click="Back_Button" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.504" />
+                <Button Width="auto" Height="auto" HorizontalAlignment="Right" Margin="10,10,10,10" Background="White" Foreground="Black" Content="X" FontSize="44"  Click="Exit_Button" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.504" />
+            </Grid>
+            <StackPanel Orientation="Horizontal" Margin="20, 0 0 0">
+                <Label Content="Search by ID Number: "/>
+                <TextBox x:Name="search_id_number"  MinWidth="200" MaxWidth="300" Margin="10 0 0 0"></TextBox> <!--TextChanged="search_resident"/>-->
+            </StackPanel>
+            <DataGrid x:Name="resident_grid" SelectionMode="Single" AutoGenerateColumns="False" Margin="0 15 0 0"> <!--SelectionChanged="selected_resident"-->>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="ID Number" Binding="{Binding ID_Number}"/>
+                    <DataGridTextColumn Header="Floor" Binding="{Binding Floor}"/>
+                    <DataGridTextColumn Header="Resident Type" Binding="{Binding Resident_Type}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </DockPanel>
+</Window>
+            <!--<Button Width="auto" Height="auto" HorizontalAlignment="Left" Margin="10,10,0,100" Background="White" Foreground="Black" Content="Back" FontSize="44"  Click="Back_Button" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.504" />-->
