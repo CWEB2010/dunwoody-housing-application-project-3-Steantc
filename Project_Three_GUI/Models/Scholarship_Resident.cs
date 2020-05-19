@@ -9,9 +9,9 @@ namespace Project_Three_GUI.Models
     class Scholarship_Resident : Resident
     {
         public string Scholarship_Type { get; set; }
-        public int Scholarship_Amount { get; set; }
+        public double Scholarship_Amount { get; set; }
 
-        public Scholarship_Resident(string name, int id, int floor, string type, string scholarshipType, int scholarshipAmount)
+        public Scholarship_Resident(string name, int id, int floor, string type, string scholarshipType, double scholarshipAmount)
         {
             this.Name = name;
             this.Id_Number = id;

@@ -1,0 +1,6 @@
+Name,Id_Number,Floor,Resident_Type,Job,Hourly_Pay,Scholarship_Type,Scholarship_Amount,Sport,Role
+Mark Brown,10,6,Worker,Bookstore,15,,,,
+Billy Bob,1,2,Athlete,,,,,Football,Lineman
+Lyle Nelson,3,8,Worker,Librarian,12,,,,
+Andrew Hanson,7,1,Scholarship,,,General,10000,,
+Tim Duder,2,5,Scholarship,,,Academic,30000,,

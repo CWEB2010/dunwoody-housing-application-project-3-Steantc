@@ -20,7 +20,7 @@
             <TextBox x:Name="username"  MinWidth="200" MaxWidth="300" Margin="10 0 0 0" TextChanged="check_username"/>
             <Label Content="Password: "/>
             <TextBox x:Name="password"  MinWidth="200" MaxWidth="300" Margin="10 0 0 0" TextChanged="check_password"/>
-            <Button Content="Enter" MaxWidth="150" MinWidth="100" Margin="10 20 0 0" Background="Black" Foreground="White" FontSize="22" Height="50" Click="selection_btn_click"/>
+            <Button Content="Enter" MaxWidth="150" MinWidth="100" Margin="10 20 0 0" Background="#aa1d2c" Foreground="White" FontSize="22" Height="50" Click="selection_btn_click"/>
             <StackPanel Orientation="Horizontal"  Width="auto" Height="auto" HorizontalAlignment="Center">
             </StackPanel>
         </StackPanel>
