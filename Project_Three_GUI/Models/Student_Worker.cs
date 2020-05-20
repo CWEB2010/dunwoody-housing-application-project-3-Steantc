@@ -8,16 +8,18 @@ namespace Project_Three_GUI.Models
 {
     class Student_Worker : Resident
     {
-        public string Job { get; set; }
+        public int Hours_Worked { get; set; }
         public double Hourly_pay { get; set; }
 
-        public Student_Worker(string name, int id, int floor, string type, string job, double pay)
+        public Student_Worker(string name, int id, int floor, string type, int room, double fee, int hours, double pay)
         {
             this.Name = name;
             this.Id_Number = id;
             this.Floor = floor;
             this.Resident_Type = type;
-            this.Job = job;
+            this.Room_Number = room;
+            this.Boarding_Fee = fee;
+            this.Hours_Worked = hours;
             this.Hourly_pay = pay;
         }
     }

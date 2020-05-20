@@ -12,6 +12,8 @@ namespace Project_Three_GUI.Models
         public int Id_Number { get; set; }
         public int Floor { get; set; }
         public string Resident_Type { get; set; }
+        public int Room_Number { get; set; }
+        public double Boarding_Fee { get; set; }
 
         //public Resident(string name, int id, int floor, string type)
         //{

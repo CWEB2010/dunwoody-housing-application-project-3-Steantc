@@ -46,21 +46,26 @@ namespace Project_Three_GUI
         private void Submit_Resident(object sender, RoutedEventArgs e)
         {
             ComboBoxItem residentType = (ComboBoxItem)resident_combo.SelectedItem;
+            ComboBoxItem floor = (ComboBoxItem)floor_combo.SelectedItem;
+            double fee;
 
             if (residentType.Content.ToString() == "Student Worker")
             {
-                aResident = new Student_Worker(name_tb.Text, Convert.ToInt32(id_tb.Text), Convert.ToInt32(floor_tb.Text), residentType.Content.ToString(), job_tb.Text, Convert.ToDouble(pay_tb.Text));
+                fee = 1245 - ((Convert.ToDouble(hours_tb.Text) * Convert.ToDouble(pay_tb.Text)) / 2);
+                aResident = new Student_Worker(name_tb.Text, Convert.ToInt32(id_tb.Text), Convert.ToInt32(floor.Content.ToString()), residentType.Content.ToString(), Convert.ToInt32(room_tb.Text), fee, Convert.ToInt32(hours_tb.Text), Convert.ToDouble(pay_tb.Text));
             }
             if (residentType.Content.ToString() == "ScholarShip Recipent")
             {
-                aResident = new Scholarship_Resident(name_tb.Text, Convert.ToInt32(id_tb.Text), Convert.ToInt32(floor_tb.Text), residentType.Content.ToString(), scholarshipType_tb.Text, Convert.ToDouble(scholarshipAmount_tb.Text));
+                fee = 100;
+                aResident = new Scholarship_Resident(name_tb.Text, Convert.ToInt32(id_tb.Text), Convert.ToInt32(floor.Content.ToString()), residentType.Content.ToString(), Convert.ToInt32(room_tb.Text), fee, scholarshipType_tb.Text, Convert.ToDouble(scholarshipAmount_tb.Text));
             }
             if (residentType.Content.ToString() == "Student Athlete")
             {
-                aResident = new Athlete_Resident(name_tb.Text, Convert.ToInt32(id_tb.Text), Convert.ToInt32(floor_tb.Text), residentType.Content.ToString(), sport_tb.Text, role_tb.Text);
+                fee = 1200;
+                aResident = new Athlete_Resident(name_tb.Text, Convert.ToInt32(id_tb.Text), Convert.ToInt32(floor.Content.ToString()), residentType.Content.ToString(), Convert.ToInt32(room_tb.Text), fee, sport_tb.Text, role_tb.Text);
             }
             residentWindow.Add(aResident);
-            //source.writeData(residentWindow);
+            //source.writeData(residentWindow); //Uncomment this out to write to file (currently deletes everything in the file. Use backup file to restore information)
         }
     }
 }

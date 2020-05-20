@@ -38,17 +38,17 @@ namespace Project_Three_GUI.Models
 					data = read.ReadLine().Split(',');
 					if (data[3] == "Worker")
 					{
-						residentList.Add(new Student_Worker(data[0], Convert.ToInt32(data[1]), Convert.ToInt32(data[2]), data[3], data[4], Convert.ToDouble(data[5])));
+						residentList.Add(new Student_Worker(data[0], Convert.ToInt32(data[1]), Convert.ToInt32(data[2]), data[3], Convert.ToInt32(data[4]), Convert.ToDouble(data[5]), Convert.ToInt32(data[6]), Convert.ToDouble(data[7])));
 						Console.WriteLine(residentList[residentList.Count - 1]);
 					}
 					if (data[3] == "Scholarship")
 					{
-						residentList.Add(new Scholarship_Resident(data[0], Convert.ToInt32(data[1]), Convert.ToInt32(data[2]), data[3], data[6], Convert.ToDouble(data[7])));
+						residentList.Add(new Scholarship_Resident(data[0], Convert.ToInt32(data[1]), Convert.ToInt32(data[2]), data[3], Convert.ToInt32(data[4]), Convert.ToDouble(data[5]), data[8], Convert.ToDouble(data[9])));
 						Console.WriteLine(residentList[residentList.Count - 1]);
 					}
 					if (data[3] == "Athlete")
 					{
-						residentList.Add(new Athlete_Resident(data[0], Convert.ToInt32(data[1]), Convert.ToInt32(data[2]), data[3], data[8], (data[9])));
+						residentList.Add(new Athlete_Resident(data[0], Convert.ToInt32(data[1]), Convert.ToInt32(data[2]), data[3], Convert.ToInt32(data[4]), Convert.ToDouble(data[5]), data[10], (data[11])));
 						Console.WriteLine(residentList[residentList.Count - 1]);
 					}
 				}
@@ -62,39 +62,23 @@ namespace Project_Three_GUI.Models
 			return residentList;
 		}//End of readData() method
 
-		//public void writeData(ObservableCollection<Resident> residentList)
-		public void writeData(Resident aResident)
+		public void writeData(ObservableCollection<Resident> residentList)
 		{
 			FileStream output = new FileStream(PATH, FileMode.Create, FileAccess.Write);
 			StreamWriter write = new StreamWriter(output);
-			//write.WriteLine("Name	Id_Number,Floor,Resident_Type,Job,Hourly_Pay,Scholarship_Type,Scholarship_Amount,Sport,Role");
-			if (aResident.Resident_Type == "Student Worker")
+			write.WriteLine("Name,Id_Number,Floor,Resident_Type,Room,Boarding_Fee,Hours_Worked,Hourly_Pay,Scholarship_Type,Scholarship_Amount,Sport,Role");
+			foreach (Student_Worker x in residentList)
 			{
-				//write.WriteLine($"{aResident.Name},{aResident.Id_Number},{aResident.Floor},{aResident.Resident_Type},{aResident.Job}, {aResident.Hourly_pay}");
+				write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},{x.Room_Number},{x.Boarding_Fee},{x.Hours_Worked}, {x.Hourly_pay}");
 			}
 			foreach (Scholarship_Resident x in residentList)
 			{
-				write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},'','',{x.Scholarship_Type}, {x.Scholarship_Amount}");
+				write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},{x.Room_Number},{x.Boarding_Fee},'','',{x.Scholarship_Type}, {x.Scholarship_Amount}");
 			}
 			foreach (Athlete_Resident x in residentList)
 			{
-				write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},'','','','',{x.Sport}, {x.Role}");
+				write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},{x.Room_Number},{x.Boarding_Fee},'','','','',{x.Sport}, {x.Role}");
 			}
-
-			//or
-
-			//foreach (Student_Worker x in residentList)
-			//{
-			//	write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},{x.Job}, {x.Hourly_pay}");
-			//}
-			//foreach (Scholarship_Resident x in residentList)
-			//{
-			//	write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},'','',{x.Scholarship_Type}, {x.Scholarship_Amount}");
-			//}
-			//foreach (Athlete_Resident x in residentList)
-			//{
-			//	write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},'','','','',{x.Sport}, {x.Role}");
-			//}
 			write.Dispose();
 			output.Dispose();
 

@@ -18,8 +18,8 @@
             <TextBox x:Name="name_tb" Margin="0,0,0,0" />
             <Label Content="ID Number" Margin="0,20,0,0"  />
             <TextBox x:Name="id_tb" Margin="0,0,0,0" />
-            <Label Content="Floor" Margin="0,20,0,0"  />
-            <TextBox x:Name="floor_tb" Margin="0,0,0,0" />
+            <Label Content="Room #" Margin="0,20,0,0"  />
+            <TextBox x:Name="room_tb" Margin="0,0,0,0" />
             <Label Content="Resident Type" Margin="0,20,0,0"  />
             <ComboBox x:Name="resident_combo">
                 <ComboBoxItem IsSelected="True">Not Selected</ComboBoxItem>
@@ -27,7 +27,117 @@
                 <ComboBoxItem Tag="2">Student Athlete</ComboBoxItem>
                 <ComboBoxItem Tag="3">Student Worker</ComboBoxItem>
             </ComboBox>
-            
+            <Label Content="Floor" Margin="0,20,0,0"  />
+            <ComboBox x:Name="floor_combo">
+                <ComboBoxItem IsSelected="True">Not Selected</ComboBoxItem>
+                <ComboBoxItem>7
+                    <ComboBoxItem.Style>
+                        <Style>
+                            <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger  
+                            Binding="{Binding ElementName=resident_combo, Path=SelectedItem.Tag}" Value="1">
+                                    <Setter Property="Label.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBoxItem.Style>
+                </ComboBoxItem>
+                <ComboBoxItem>8
+                    <ComboBoxItem.Style>
+                        <Style>
+                            <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger  
+                                Binding="{Binding ElementName=resident_combo, Path=SelectedItem.Tag}" Value="1">
+                                    <Setter Property="Label.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBoxItem.Style>
+                </ComboBoxItem>
+
+                <ComboBoxItem>4
+                    <ComboBoxItem.Style>
+                        <Style>
+                            <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger  
+                            Binding="{Binding ElementName=resident_combo, Path=SelectedItem.Tag}" Value="2">
+                                    <Setter Property="Label.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBoxItem.Style>
+                </ComboBoxItem>
+                <ComboBoxItem>5
+                    <ComboBoxItem.Style>
+                        <Style>
+                            <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger  
+                                Binding="{Binding ElementName=resident_combo, Path=SelectedItem.Tag}" Value="2">
+                                    <Setter Property="Label.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBoxItem.Style>
+                </ComboBoxItem>
+                <ComboBoxItem>6
+                    <ComboBoxItem.Style>
+                        <Style>
+                            <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger  
+                                Binding="{Binding ElementName=resident_combo, Path=SelectedItem.Tag}" Value="2">
+                                    <Setter Property="Label.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBoxItem.Style>
+                </ComboBoxItem>
+
+                <ComboBoxItem>1
+                    <ComboBoxItem.Style>
+                        <Style>
+                            <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger  
+                            Binding="{Binding ElementName=resident_combo, Path=SelectedItem.Tag}" Value="3">
+                                    <Setter Property="Label.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBoxItem.Style>
+                </ComboBoxItem>
+                <ComboBoxItem>2
+                    <ComboBoxItem.Style>
+                        <Style>
+                            <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger  
+                                Binding="{Binding ElementName=resident_combo, Path=SelectedItem.Tag}" Value="3">
+                                    <Setter Property="Label.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBoxItem.Style>
+                </ComboBoxItem>
+                <ComboBoxItem>3
+                    <ComboBoxItem.Style>
+                        <Style>
+                            <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger  
+                                Binding="{Binding ElementName=resident_combo, Path=SelectedItem.Tag}" Value="3">
+                                    <Setter Property="Label.Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBoxItem.Style>
+                </ComboBoxItem>
+            </ComboBox>
+
             <Label Content="Scholarship Type"  Margin="0,10,0,0">
                 <Label.Style>
                     <Style>
@@ -134,7 +244,7 @@
                 </TextBox.Style>
             </TextBox>
 
-            <Label Content="Job"  Margin="0,10,0,0">
+            <Label Content="Hours Worked (Monthly)"  Margin="0,10,0,0">
                 <Label.Style>
                     <Style>
                         <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
@@ -147,7 +257,7 @@
                     </Style>
                 </Label.Style>
             </Label>
-            <TextBox x:Name="job_tb" Margin="0,0,0,0">
+            <TextBox x:Name="hours_tb" Margin="0,0,0,0">
                 <TextBox.Style>
                     <Style>
                         <Setter Property="Label.Visibility" Value="Collapsed"></Setter>
@@ -193,8 +303,10 @@
                     <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                     <DataGridTextColumn Header="ID Number" Binding="{Binding Id_Number}"/>
                     <DataGridTextColumn Header="Floor" Binding="{Binding Floor}"/>
+                    <DataGridTextColumn Header="Room" Binding="{Binding Room_Number}"/>
+                    <DataGridTextColumn Header="Bording Fee" Binding="{Binding Boarding_Fee}"/>
                     <DataGridTextColumn Header="Resident Type" Binding="{Binding Resident_Type}"/>
-                    <DataGridTextColumn Header="Job" Binding="{Binding Job}"/>
+                    <DataGridTextColumn Header="Hours (Monthly)" Binding="{Binding Hours_Worked}"/>
                     <DataGridTextColumn Header="Pay" Binding="{Binding Hourly_pay}"/>
                     <DataGridTextColumn Header="Scholarship Type" Binding="{Binding Scholarship_Type}"/>
                     <DataGridTextColumn Header="Scholarship Amount" Binding="{Binding Scholarship_Amount}"/>
