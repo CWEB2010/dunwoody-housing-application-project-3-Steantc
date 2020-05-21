@@ -23,7 +23,7 @@
             <Label Content="Resident Type" Margin="0,20,0,0"  />
             <ComboBox x:Name="resident_combo">
                 <ComboBoxItem IsSelected="True">Not Selected</ComboBoxItem>
-                <ComboBoxItem Tag="1">ScholarShip Recipent</ComboBoxItem>
+                <ComboBoxItem Tag="1">Scholarship Recipient</ComboBoxItem>
                 <ComboBoxItem Tag="2">Student Athlete</ComboBoxItem>
                 <ComboBoxItem Tag="3">Student Worker</ComboBoxItem>
             </ComboBox>

@@ -1,6 +1,9 @@
 Name,Id_Number,Floor,Resident_Type,Room,Boarding_Fee,Hours Worked,Hourly_Pay,Scholarship_Type,Scholarship_Amount,Sport,Role
-Mark Brown,10,3,Worker,306,605,80,16,,,,
-Billy Bob,1,5,Athlete,528,1200,,,,,Football,Lineman
-Lyle Nelson,3,1,Worker,137,405,120,14,,,,
-Andrew Hanson,7,7,Scholarship,722,100,,,General,10000,,
-Tim Duder,2,8,Scholarship,841,100,,,Academic,30000,,
+Mark Brown,10,3,Student Worker,306,605,80,16,,,,
+Billy Bob,1,5,Student Athlete,528,1200,,,,,Football,Lineman
+Lyle Nelson,3,1,Student Worker,137,405,120,14,,,,
+Andrew Hanson,7,7,Scholarship Recipient,722,100,,,General,10000,,
+Chris Newman,113,2,Student Worker,222,395,100,17,,,,
+Brian Larson,65,5,Student Athlete,524,1200,,,,,Basketball,Point Guard
+Leslie Commes,36,8,Scholarship Recipient,829,100,,,General,5000,,
+Tim Duder,2,8,Scholarship Recipient,841,100,,,Academic,30000,,

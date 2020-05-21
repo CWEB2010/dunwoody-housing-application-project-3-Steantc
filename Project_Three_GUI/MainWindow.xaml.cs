@@ -58,6 +58,11 @@ namespace Project_Three_GUI
                 selectionWindow.Show();
                 this.Close();
             }
+            else
+            {
+                introText.Content = "Wrong Username or Password, please try again";
+                introText.Foreground = Brushes.Red;
+            }
         }
     }
 }
