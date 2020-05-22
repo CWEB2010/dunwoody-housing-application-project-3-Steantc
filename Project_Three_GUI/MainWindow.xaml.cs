@@ -34,24 +34,8 @@ namespace Project_Three_GUI
 
             this.Close();
         }
-        private void check_username(object sender, TextChangedEventArgs e)
-        {
-            if (username.Text == GenericUser)
-            {
-                UsernameCheck = true;
-            }
-        }
-
-        private void check_password(object sender, TextChangedEventArgs e)
-        {
-            if (password.Text == GenericPass)
-            {
-                UsernameCheck = true;
-            }
-        }
         private void selection_btn_click(object sender, RoutedEventArgs e)
         {
-            //if ((UsernameCheck && PasswordCheck == true)
             if (username.Text == GenericUser && password.Text == GenericPass)
             {
                 Selection_Window selectionWindow = new Selection_Window();
@@ -60,6 +44,8 @@ namespace Project_Three_GUI
             }
             else
             {
+                username.Clear();
+                password.Clear();
                 introText.Content = "Wrong Username or Password, please try again";
                 introText.Foreground = Brushes.Red;
             }

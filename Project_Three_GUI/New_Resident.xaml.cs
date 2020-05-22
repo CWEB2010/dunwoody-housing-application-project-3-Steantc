@@ -76,6 +76,12 @@ namespace Project_Three_GUI
                     source.writeDataA(atResident);
                 }
             }
+            catch
+            {
+                New_Resident refreshResidentWindow = new New_Resident();
+                refreshResidentWindow.Show();
+                this.Close();
+            }
             finally
             {
                 New_Resident refreshResidentWindow = new New_Resident();

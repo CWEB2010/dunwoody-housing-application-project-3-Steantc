@@ -13,12 +13,6 @@ namespace Project_Three_GUI.Models
 		//DECLARATIONS
 		const string PATH = @"C:\Users\steantc\Documents\CWEB2010\dunwoody-housing-application-project-3-Steantc-master\residentList.csv";
 
-		//FileStream input;
-		//StreamReader read;
-		string line;
-		string[] data;
-		ObservableCollection<Resident> residentList;//Global
-
 		/**Mehod that reads the data into the program **/
 		public ObservableCollection<Resident> readData()
 		{
@@ -62,27 +56,6 @@ namespace Project_Three_GUI.Models
 			return residentList;
 		}//End of readData() method
 
-		//public void writeData(List<Resident> residentList)
-		//{
-		//	FileStream output = new FileStream(PATH, FileMode.Create, FileAccess.Write);
-		//	StreamWriter write = new StreamWriter(output);
-		//	write.WriteLine("Name,Id_Number,Floor,Resident_Type,Room,Boarding_Fee,Hours_Worked,Hourly_Pay,Scholarship_Type,Scholarship_Amount,Sport,Role");
-		//	foreach (Student_Worker x in residentList)
-		//	{
-		//		write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},{x.Room_Number},{x.Boarding_Fee},{x.Hours_Worked}, {x.Hourly_pay}");
-		//	}
-		//	foreach (Scholarship_Resident x in residentList)
-		//	{
-		//		write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},{x.Room_Number},{x.Boarding_Fee},'','',{x.Scholarship_Type}, {x.Scholarship_Amount}");
-		//	}
-		//	foreach (Athlete_Resident x in residentList)
-		//	{
-		//		write.WriteLine($"{x.Name},{x.Id_Number},{x.Floor},{x.Resident_Type},{x.Room_Number},{x.Boarding_Fee},'','','','',{x.Sport}, {x.Role}");
-		//	}
-		//	write.Dispose();
-		//	output.Dispose();
-
-		//}//End of writeData
 		public void writeDataW(Student_Worker residentW)
 		{
 			FileStream output = new FileStream(PATH, FileMode.Append, FileAccess.Write);
@@ -106,6 +79,6 @@ namespace Project_Three_GUI.Models
 			write.WriteLine($"{residentS.Name},{residentS.Id_Number},{residentS.Floor},{residentS.Resident_Type},{residentS.Room_Number},{residentS.Boarding_Fee},,,{residentS.Scholarship_Type},{residentS.Scholarship_Amount}");
 			write.Dispose();
 			output.Dispose();
-		}
+		}//End of writeData Methods
 	}
 }
