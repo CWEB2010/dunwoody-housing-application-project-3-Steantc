@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_Three_GUI.Models
 {
-     abstract class Resident
+     abstract class Resident //Primary Class for creating Resident Objects (Parent)
     {
         public string Name { get; set; }
         public int Id_Number { get; set; }

@@ -8,10 +8,11 @@ namespace Project_Three_GUI.Models
 {
     class Student_Worker : Resident
     {
+        //Child class of Resient fo making Student_Worker Objects
         public int Hours_Worked { get; set; }
         public double Hourly_pay { get; set; }
 
-        public Student_Worker(string name, int id, int floor, string type, int room, double fee, int hours, double pay)
+        public Student_Worker(string name, int id, int floor, string type, int room, double fee, int hours, double pay) //Constructor
         {
             this.Name = name;
             this.Id_Number = id;

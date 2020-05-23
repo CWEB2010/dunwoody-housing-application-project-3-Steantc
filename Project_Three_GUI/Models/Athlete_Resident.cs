@@ -8,10 +8,11 @@ namespace Project_Three_GUI.Models
 {
     class Athlete_Resident : Resident
     {
+        //Child class of Resient fo making Athlete_Resident Objects
         public string Sport { get; set; }
         public string Role { get; set; }
 
-        public Athlete_Resident(string name, int id, int floor, string type, int room, double fee, string sport, string role)
+        public Athlete_Resident(string name, int id, int floor, string type, int room, double fee, string sport, string role) //Constructor
         {
             this.Name = name;
             this.Id_Number = id;

@@ -8,10 +8,11 @@ namespace Project_Three_GUI.Models
 {
     class Scholarship_Resident : Resident
     {
+        //Child class of Resient fo making Scholarship_Resident Objects
         public string Scholarship_Type { get; set; }
         public double Scholarship_Amount { get; set; }
 
-        public Scholarship_Resident(string name, int id, int floor, string type, int room, double fee, string scholarshipType, double scholarshipAmount)
+        public Scholarship_Resident(string name, int id, int floor, string type, int room, double fee, string scholarshipType, double scholarshipAmount) //Constructor
         {
             this.Name = name;
             this.Id_Number = id;

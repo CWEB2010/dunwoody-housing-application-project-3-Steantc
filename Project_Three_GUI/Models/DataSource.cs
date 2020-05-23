@@ -56,6 +56,7 @@ namespace Project_Three_GUI.Models
 			return residentList;
 		}//End of readData() method
 
+		//Methods for writing Data to the CSV file
 		public void writeDataW(Student_Worker residentW)
 		{
 			FileStream output = new FileStream(PATH, FileMode.Append, FileAccess.Write);

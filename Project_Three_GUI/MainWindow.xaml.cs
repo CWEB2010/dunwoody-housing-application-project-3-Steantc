@@ -20,29 +20,27 @@ namespace Project_Three_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Boolean UsernameCheck = false;
-        public Boolean PasswordCheck = false;
 
-        public string GenericUser = "Home";
-        public string GenericPass = "1234";
+        public string GenericUser = "Home"; //Username
+        public string GenericPass = "1234"; //Password
         public MainWindow()
         {
             InitializeComponent();
         }
-        private void Exit_Button(object sender, RoutedEventArgs e)
+        private void Exit_Button(object sender, RoutedEventArgs e) //Method for exit button
         {
 
             this.Close();
         }
-        private void selection_btn_click(object sender, RoutedEventArgs e)
+        private void selection_btn_click(object sender, RoutedEventArgs e) //Checks username and password
         {
             if (username.Text == GenericUser && password.Text == GenericPass)
             {
-                Selection_Window selectionWindow = new Selection_Window();
+                Selection_Window selectionWindow = new Selection_Window(); //If correct moves to slection window
                 selectionWindow.Show();
                 this.Close();
             }
-            else
+            else //If wrong prompts user to try again
             {
                 username.Clear();
                 password.Clear();
